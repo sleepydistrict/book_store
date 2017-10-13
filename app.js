@@ -10,11 +10,13 @@ var Book = require('./models/book');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.set('port', 3000);
+//app.set(uri, mongo ds115085.mlab.com:15085/book_store);
 
 // connect to mongoose
+// mongo ds115085.mlab.com:--port15085/book_store -usleepydistrict01 -pSheahi01
+// mongodb://sleepydistrict01:sheahi01@ds115085.mlab.com:15085/book_store
 
-mongoose.connect('mongodb://localhost/books');
+mongoose.connect('mongodb://admin:1234@ds115085.mlab.com:15085/book_store');
 var db = mongoose.connection;
 
 app.get('/', (req, res) => {
@@ -92,4 +94,5 @@ app.get('/api/books/:_id', (req, res) => {
 app.listen(3000);
 console.log('Running on port 3000...');
 
-//mongo ds012345.mlab.com:56789/dbname -u dbuser -p dbpassword
+
+
