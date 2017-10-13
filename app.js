@@ -10,7 +10,8 @@ var Book = require('./models/book');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//app.set(uri, mongo ds115085.mlab.com:15085/book_store);
+var port = process.env.PORT;
+app.set('port', port);
 
 // connect to mongoose
 // mongo ds115085.mlab.com:--port15085/book_store -usleepydistrict01 -pSheahi01
@@ -91,7 +92,7 @@ app.get('/api/books/:_id', (req, res) => {
   });
 });
 
-//app.listen(3000);
+app.listen(port);
 //console.log('Running on port 3000...');
 
 
