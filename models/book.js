@@ -4,35 +4,12 @@ var mongoose = require('mongoose');
 
 var bookSchema = mongoose.Schema({
   title:{
-    type: String//,//
-    //required: true
+    type: String
   },
   genre:{
-    type: String//,
-    //required: true
-  }//,
-  // discrption:{
-  //   type: String
-  // },
-  // author:{
-  //   type: String
-  // },
-  // publisher:{
-  //   type: String
-  // },
-  // pages:{
-  //   type: String
-  // },
-  // image_url:{
-  //   type: String
-  // },
-  // buy_url:{
-  //   type: String
-  // },
-  // create_date:{
-  //   type: Date,
-  //   default: Date.now
-  // }
+    type: String
+  },
+  
 });
 
 var Book = module.exports = mongoose.model('Book', bookSchema);
