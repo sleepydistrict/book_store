@@ -22,7 +22,7 @@ class BookList extends React.Component {
   
     render() {
       let bookItems = this.state.books.map( (book) => {
-        return <li>{ book.name }</li>
+        return <li key ={book._id} >{ book.title }</li>
       });
       
       return (
