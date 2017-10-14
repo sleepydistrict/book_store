@@ -10,9 +10,9 @@ class BookList extends React.Component {
     componentWillMount() {
       axios.get('/api/books')
         .then((response) => {
-          console.log(response)
+          console.log(response.data)
           this.setState({
-            beers: response.data
+            books: response.data
           })
         })
         .catch((error) => {
@@ -22,7 +22,7 @@ class BookList extends React.Component {
   
     render() {
       let bookItems = this.state.books.map( (book) => {
-        return <li key ={book._id} >{ book.title }</li>
+        return <li key={book._id}>{ book.title }</li>
       });
       
       return (
