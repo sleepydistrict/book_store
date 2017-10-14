@@ -1,14 +1,28 @@
+/**
+ * Import JS libraries which we installed with npm 
+ */
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var app = express();
-var babel_core = require('babel_core');
+//var babel_core = require('babel_core');
+
+
+// Import Mongoose Schema file (models/')
 
 var Genre = require('./models/genres'); 
 var Book = require('./models/book');
 
+// Initalize express web server
+
+var app = express();
+
+// Configure express server with body parser library
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
+
+// Set port for express web server
 
 var port = process.env.PORT;
 app.set('port', port);
@@ -17,10 +31,11 @@ app.set('port', port);
 // mongo ds115085.mlab.com:--port15085/book_store -usleepydistrict01 -pSheahi01
 // mongodb://sleepydistrict01:sheahi01@ds115085.mlab.com:15085/book_store
 
-mongoose.connect('mongodb://admin:1234@ds115085.mlab.com:15085/book_store');
-var db = mongoose.connection;
+var promise = mongoose.connect('mongodb://admin:1234@ds115085.mlab.com:15085/book_store', {
+  useMongoClient: true, 
+});
 
-require("babel-core").transform("code", options);
+//require("babel-core").transform("code", options);
 
 
 app.get('/', (req, res) => {
@@ -94,6 +109,8 @@ app.get('/api/books/:_id', (req, res) => {
       res.json(book);
   });
 });
+
+// Start express web server
 
 app.listen(app.get('port'));
 //console.log('Running on port 3000...');
