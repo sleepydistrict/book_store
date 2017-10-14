@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class BeerList extends React.Component {
+class BookList extends React.Component {
   
     constructor() {
       super();
       this.state = {
-        beers: []
+        books: []
       };
     }
   
@@ -24,19 +24,19 @@ class BeerList extends React.Component {
     }
   
     render() {
-      let beerItems = this.state.beers.map( (beer) => {
-        return <li>{ beer.name }</li>
+      let bookItems = this.state.books.map( (book) => {
+        return <li>{ book.name }</li>
       });
       
       return (
         <ul>
-          { beerItems }
+          { bookItems }
         </ul>
       );
     }
   }
   
   ReactDOM.render(
-    <BeerList />,
+    <BookList />,
     document.getElementById('books')
   );
