@@ -8,10 +8,28 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.12.1"
+    "mongoose": "^4.12.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "author": "Gregory Lesky",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "presets": [
+      "env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sleepydistrict/book_store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sleepydistrict/book_store/issues"
+  },
+  "homepage": "https://github.com/sleepydistrict/book_store#readme"
 }
