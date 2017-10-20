@@ -4,6 +4,7 @@
   "description": "Simple book store",
   "main": "app.js",
   "scripts": {
+    "build": "./node_modules/.bin/webpack --config webpack.config.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +20,13 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "presets": [
       "env"
-    ]
+    ],
+    "webpack": "^3.8.1"
   },
   "repository": {
     "type": "git",

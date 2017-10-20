@@ -24,7 +24,7 @@ app.use(express.static('public'));
 
 // Set port for express web server
 
-var port = process.env.PORT;
+var port = process.env.PORT || 3000;
 app.set('port', port);
 
 // connect to mongoose
@@ -112,8 +112,9 @@ app.get('/api/books/:_id', (req, res) => {
 
 // Start express web server
 
-app.listen(app.get('port'));
-//console.log('Running on port 3000...');
+app.listen(app.get('port'), () => {
+  console.log('Running on port ' + app.get('port'));  
+});
 
 
 
